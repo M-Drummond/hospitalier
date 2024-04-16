@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #eee;
+}
+
+.widget {
+  background: #eee;
+  border: 1px solid #ccc;
+  min-height: 200px;
+  padding: 1rem;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: start;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.base-button {
+  @apply mt-4 w-full shadow-sm bg-gray-100 border border-solid font-bold uppercase border-black p-2 rounded-lg text-center transition-all;
+  @apply hover:bg-white   hover:shadow-md;
+}
+
+.action-button {
+  @apply mt-4 w-full flex flex-row items-center bg-gray-600 text-white border shadow-sm border-solid font-bold uppercase border-black p-2 rounded-lg text-center transition-all;
+  @apply hover:text-white hover:bg-black   hover:shadow-md;
+}
+
+.remove-button {
+  @apply mt-4 w-full flex flex-row items-center bg-gray-300  text-black border shadow-sm border-solid font-bold uppercase border-black p-2 rounded-lg text-center transition-all;
+  @apply hover:text-white hover:bg-black   hover:shadow-md;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
