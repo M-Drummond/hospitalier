@@ -22,16 +22,11 @@ const handleAssignButton = function (patient) {
     ui.assigningPatient = patient
 }
 
-
-
-</script>
-
-<script lang="ts">
-
 </script>
 
 <template>
-    <div class="flex flex-row justify-between text-xs w-full">
+    <div class="flex flex-row justify-between text-xs w-full relative">
+
         <button class="action-button flex flex-row justify-between space-x-4  text-md"
             @click="handleAssignButton(patient)">
             {{ patient.assignedBed?.id ? `Bed: ${patient.assignedBed.id}` : 'Assign' }}
@@ -42,6 +37,7 @@ const handleAssignButton = function (patient) {
             </svg>
 
         </button>
+
         <button v-if="patient.assignedBed?.id"
             class="remove-button ml-2 flex flex-row justify-between space-x-4   text-md" @click="unassign(patient)">
             <span>Unassign</span>
@@ -49,11 +45,7 @@ const handleAssignButton = function (patient) {
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
-
-
         </button>
 
     </div>
-
 </template>
-<style scoped></style>

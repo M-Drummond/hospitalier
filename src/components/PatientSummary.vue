@@ -15,6 +15,15 @@ defineProps({
 
 <template>
     <div class="patientSummary" v-if="patient">
+
+        <div class="relative h-10">
+            <transition name="fade">
+                <h3 v-if="patient.assignedBed">Assigned to Bed: {{ patient.assignedBed?.id }}</h3>
+                <h3 v-else>Not Assigned a Bed </h3>
+            </transition>
+        </div>
+
+
         <div>
             <span class="font-bold">Name:</span>
             {{ patientDisplayName(patient) }}

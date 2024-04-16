@@ -53,6 +53,8 @@ const selectedBedId = ref()
                     </div>
                 </div>
             </form>
+
+
             <button class="action-button justify-between"
                 @click="ui.assignPatientModalVisible = false, bs.assign(ui.assigningPatient, selectedBedId)">
                 <span>Assign</span>
@@ -63,6 +65,16 @@ const selectedBedId = ref()
                 </svg>
 
             </button>
+
+
+            <div v-if="ui.assigningPatient?.notes.length >= 1" class="mt-4">
+                <h3 class="mb-4">Patient Notes</h3>
+                <div v-for="note in ui.assigningPatient.notes"
+                    class="bg-white mb-2 p-2   border border-solid border-gray-400">
+                    {{ note }}
+                </div>
+            </div>
+
 
         </div>
     </transition>

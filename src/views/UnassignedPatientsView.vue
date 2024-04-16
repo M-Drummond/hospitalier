@@ -10,6 +10,10 @@ import PatientAssignedBed from '../components/PatientAssignedBed.vue'
 
 const ps = usePatientsStore();
 
+const unassigned = computed(() => {
+    return ps.patients.filter((p) => p.assignedBed === null)
+});
+
 </script>
 
 <template>
@@ -18,7 +22,7 @@ const ps = usePatientsStore();
             <h2>Patients</h2>
             <div class="widget w-full grid grid-cols-2 md:grid-cols-4 mt-8  gap-2 p-2">
 
-                <div v-for="patient in ps.patients" :key="patient.id"
+                <div v-for="patient in unassigned" :key="patient.id"
                     :class="patient.assignedBed?.id ? 'border-green-500' : ''"
                     class="border-gray-500 hover:shadow-sm transition-all hover:bg-white md:min-h-full border-solid border-2 p-4">
 

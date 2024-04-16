@@ -29,6 +29,7 @@ ps.getData();
       <nav class="bg-white border border-solid border-gray-500 p-4   my-2 space-x-4 container mx-auto">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/patients/">Patients</RouterLink>
+        <RouterLink to="/unassigned/">Unassigned</RouterLink>
         <RouterLink to="/beds/">Beds</RouterLink>
       </nav>
 
@@ -44,6 +45,7 @@ ps.getData();
       <nav class="bg-white border border-solid border-gray-500 p-4   my-2 space-x-4 container mx-auto">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/patients/">Patients</RouterLink>
+        <RouterLink to="/unassigned/">Unassigned</RouterLink>
         <RouterLink to="/beds/">Beds</RouterLink>
       </nav>
 
@@ -57,6 +59,11 @@ ps.getData();
 
 <style scoped>
 nav a {
-  @apply inline-block p-2 hover:bg-gray-200 font-bold;
+  @apply inline-block p-2 hover:bg-gray-200 font-bold transition-all;
+  @apply active:rounded-xl;
+}
+
+nav .router-link-active {
+  @apply rounded-md bg-black text-white hover:bg-gray-600;
 }
 </style>

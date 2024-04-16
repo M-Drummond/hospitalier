@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/patient/:slug',
       name: 'View Patient',
       component: () => import('../views/SinglePatientView.vue')
+    },
+    {
+      path: '/unassigned',
+      name: 'View Unassigned Patients',
+      component: () => import('../views/UnassignedPatientsView.vue')
     }
   ]
 })

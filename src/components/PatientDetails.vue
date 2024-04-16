@@ -16,9 +16,6 @@ defineProps({
 <template>
     <div class="patientDetails mb-8">
 
-        <transition name="fade">
-            <h3 v-if="patient.assignedBed">Assigned to Bed: {{ patient.assignedBed?.id }}</h3>
-        </transition>
 
         <img class="rounded-full my-4 w-24 h-24" :src="patient.picture.medium" />
 
