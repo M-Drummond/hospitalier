@@ -30,7 +30,9 @@ const previewPatients = computed(() => {
 
 <template>
   <main v-cloak>
+    <h1 class="mb-4">At A Glance - Hospitalier</h1>
     <div class="flex md:flex-row space-x-4 items-stretch justify-center w-full">
+
       <div class="widget flex w-full">
         <h2>Beds - {{ bs.beds.length }}</h2>
 

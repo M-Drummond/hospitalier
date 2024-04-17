@@ -48,7 +48,9 @@ const selectedBedId = ref()
                         <label for="bed">Bed: </label>
                         <select id="bed" class="w-full" v-model="selectedBedId">
                             <!-- <option disabed>Select A Bed</option> -->
-                            <option :value="bed.id" v-for="bed in emptyBeds">{{ bed.id }}</option>
+                            <option :value="bed.id" v-for="(bed, location) in emptyBeds">{{ bed.id }} -- {{ bed.location
+                                }}
+                            </option>
                         </select>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ const ps = usePatientsStore();
             <div class="widget w-full grid grid-cols-2 md:grid-cols-4 mt-8  gap-2 p-2">
 
                 <div v-for="patient in ps.patients" :key="patient.id"
-                    :class="patient.assignedBed?.id ? 'border-green-500' : ''"
+                    :class="patient.assignedBed?.id ? 'border-green-500  bg-emerald-50 hover:bg-emerald-100' : 'bg-pink-50'"
                     class="border-gray-500 hover:shadow-sm transition-all hover:bg-white md:min-h-full border-solid border-2 p-4">
 
                     <router-link class="" :to="`/patient/${patient.slug}`">
