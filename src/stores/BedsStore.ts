@@ -40,5 +40,18 @@ export const useBedsStore = defineStore('bedsStore', {
       const selectedBed = this.beds.find((b) => b.id === patient.assignedBed.id)
       selectedBed.patient = null
     }
+  },
+  getters: {
+    groupedBeds() {
+      const grouped = {}
+      this.beds.forEach((bed) => {
+        if (!grouped[bed.location]) {
+          grouped[bed.location] = []
+        }
+        grouped[bed.location].push(bed)
+      })
+      console.log('grouped:  ' + grouped)
+      return grouped
+    }
   }
 })

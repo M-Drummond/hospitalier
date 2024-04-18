@@ -11,25 +11,12 @@ import BedSummary from '@/components/BedSummary.vue'
 const ps = usePatientsStore();
 const bs = useBedsStore();
 
-
-const groupedBeds = computed(() => {
-    const grouped = {};
-    bs.beds.forEach(bed => {
-        if (!grouped[bed.location]) {
-            grouped[bed.location] = [];
-        }
-        grouped[bed.location].push(bed);
-    });
-    return grouped;
-});
-
-
 </script>
 
 <template>
     <main>
-        <div class="flex md:flex-row md:justify-between px-8 md:space-x-4 w-full">
-            <div v-for="(beds, location) in groupedBeds" :key="location">
+        <div class="flex w-full px-8 md:flex-row md:justify-between md:space-x-4">
+            <div v-for="(beds, location) in bs.groupedBeds" :key="location">
                 <h2>{{ location }}</h2>
                 <ul>
                     <li v-for="bed in bs.beds" :key="bed.id">
